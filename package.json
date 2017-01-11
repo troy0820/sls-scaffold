@@ -15,8 +15,8 @@
     "type": "git",
     "url": "git+https://github.com/troy0820/sls-scaffold.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Troy Connor",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/troy0820/sls-scaffold/issues"
   },

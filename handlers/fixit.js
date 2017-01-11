@@ -8,9 +8,9 @@ rp('https://seeclickfix.com/api/v2/issues?place_url=portsmouth&state=VA&per_page
   .then((data) => {
     const response = {
       statusCode: 200,
-      body: JSON.stringify({
-      message: JSON.parse(data).issues,
-      }),
+      body: {
+      issues: JSON.parse(data).issues,
+      },
     };
   callback(null, response);
   });
