@@ -20,6 +20,7 @@ service: aws-nodejs # NOTE: update this with your service name
 provider:
   name: aws
   runtime: nodejs4.3
+  profile: personal
 
 # you can overwrite defaults here
 #  stage: dev
@@ -63,7 +64,7 @@ functions:
           method: get
   fixit:
     handler: handlers/fixit.fixit
-    timeout: 3
+    timeout: 15
     description: Shows See Click Fix it stuff
     events:
       - http:

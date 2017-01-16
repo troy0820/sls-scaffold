@@ -16,5 +16,8 @@ rp('https://seeclickfix.com/api/v2/issues?place_url=norfolk&state=VA&per_page=20
       },
     };
   callback(null, response);
+}).
+catch((err) =>{ 
+ callback(err, err);
   });
 };
