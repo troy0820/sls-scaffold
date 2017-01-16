@@ -12,12 +12,12 @@ rp('https://seeclickfix.com/api/v2/issues?place_url=norfolk&state=VA&per_page=20
     const response = {
       statusCode: 200,
       body: {
-      issues: _.union(summaries),
+      issues: _.union(summaries) || 'There is no issues',
       },
     };
   callback(null, response);
 }).
-catch((err) =>{ 
- callback(err, err);
+catch((err) =>{
+   callback(err, err);
   });
 };
