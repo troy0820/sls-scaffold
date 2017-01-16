@@ -2,7 +2,7 @@
 
 const rp = require('request-promise');
 const _ = require('lodash');
-//TODO: Don't forget to deploy this function for the latest
+
 module.exports.fixit = (event, context, callback) => {
 
 rp('https://seeclickfix.com/api/v2/issues?place_url=norfolk&state=VA&per_page=20&page=1')
@@ -11,9 +11,9 @@ rp('https://seeclickfix.com/api/v2/issues?place_url=norfolk&state=VA&per_page=20
     const summaries = _.map(list, 'summary');
     const response = {
       statusCode: 200,
-      body: {
+      body: JSON.stringify({
       issues: _.union(summaries) || 'There is no issues',
-      },
+      }),
     };
   callback(null, response);
 }).
