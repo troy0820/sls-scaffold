@@ -12,8 +12,8 @@ rp('https://seeclickfix.com/api/v2/issues?place_url=hampton&state=VA&per_page=20
     const response = {
       statusCode: 200,
       body: JSON.stringify({
-      issues: _.union(summaries) || 'There are no issues in this city',
-      }),
+      issues: _.union(summaries) || 'There are no issues in this city'
+      })
     };
   callback(null, response);
 }).
