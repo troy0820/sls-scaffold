@@ -14,6 +14,8 @@ function rp(url) {
   });
 }
 
+//TODO: Make class for request 
+
 module.exports.fixit = (event, context, callback) => {
 
 rp('https://seeclickfix.com/api/v2/issues?place_url=hampton&state=VA&per_page=20&page=1')
