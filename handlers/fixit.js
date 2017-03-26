@@ -1,7 +1,18 @@
 'use strict';
 
-const rp = require('request-promise');
+const request = require('request');
 const _ = require('lodash');
+
+function rp(url) {
+  return new Promise((resolve, reject) => {
+    request(url, (err, response, body) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(body);
+    });
+  });
+}
 
 module.exports.fixit = (event, context, callback) => {
 
