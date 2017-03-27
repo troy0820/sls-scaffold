@@ -1,25 +1,17 @@
 'use strict';
 
-const request = require('request');
+const Fixit = require('../lib/index');
 const _ = require('lodash');
 
-function rp(url) {
-  return new Promise((resolve, reject) => {
-    request(url, (err, response, body) => {
-      if (err) {
-        reject(err);
-      }
-      resolve(body);
-    });
-  });
-}
+const fixit = new Fixit('https://seeclickfix.com/api/v2/issues?place_url=hampton&state=VA&per_page=20&page=1');
 
-//TODO: Make class for request 
+
 
 module.exports.fixit = (event, context, callback) => {
 
-rp('https://seeclickfix.com/api/v2/issues?place_url=hampton&state=VA&per_page=20&page=1')
-  .then((data) => {
+fixit
+  .request()
+  .then(data => {
     const list = JSON.parse(data).issues;
     const summaries = _.map(list, 'summary');
     const response = {
@@ -30,7 +22,7 @@ rp('https://seeclickfix.com/api/v2/issues?place_url=hampton&state=VA&per_page=20
     };
   callback(null, response);
 }).
-catch((err) =>{
+catch(err => {
    callback(err, err);
   });
 };
