@@ -10,7 +10,8 @@
   "devDependencies": {
     "esformatter": "^0.10.0",
     "eslint": "^3.13.1",
-    "eslint-config-eta": "^0.0.7"
+    "eslint-config-eta": "^0.0.7",
+    "mocha": "^3.2.0"
   },
   "scripts": {
     "test": "npm run lint",
